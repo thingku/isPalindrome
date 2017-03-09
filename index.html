@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>isPalindrome</title>
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+	<script type="text/javascript">
+		$(document).ready( function() {
+			function isPalindrome( params ) {
+				var strArray = params.replace(/[^a-z0-9]/gi, '');
+				strArray = strArray.toLowerCase();
+				strArray = strArray.split('');
+				var remainder =  strArray.length % 2;
+				var leftChars = ( strArray.length - remainder ) / 2;
+				var rightChars = strArray.length - 1;
+				for ( var left = 0, right = rightChars; left < leftChars, right > leftChars; left++, right--  ) {
+					if ( strArray[ left ] === strArray[ right ] ) {
+						return true;
+					} else {
+						return false;
+					}
+				}
+			}
+			console.log( isPalindrome( "nasabayabasan" ) );
+			console.log( isPalindrome( 'baby' ) );
+		} );
+	</script>
+</head>
+<body>
+</body>
+</html>
